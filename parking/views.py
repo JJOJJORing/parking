@@ -3,6 +3,8 @@ from parking.forms import *
 from parking.models import Car, User, Log
 from django.core.exceptions import ObjectDoesNotExist
 import math
+from django.utils import timezone
+
 
 
 def index(request):
