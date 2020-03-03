@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3ab57347-0789-4de7-a35d-fe465a1253e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +15,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -24,6 +26,7 @@
   <component name="ProjectId" id="1YcCh1QL1FtbGjUQvO1Wx1qcBBQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RunDashboard">
