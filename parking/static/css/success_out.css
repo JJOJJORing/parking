@@ -1,0 +1,44 @@
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap{
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.gif{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+    width: 65%;
+    background-image: url(../../static/out.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gif h1{
+    font-size: 5em;
+}
+#text{
+    height: 100%;
+    width: 35%;
+    padding-right: 5vw;
+    padding-top: 8vh;
+}
+.text-area{
+    margin-bottom: 5vh;
+    font-size: 1.5vw;
+}
+.text-customer{
+    font-size: 3.0vw;
+}

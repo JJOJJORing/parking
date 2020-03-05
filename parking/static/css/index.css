@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align:center;
+    background-image: url(../parking_main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.modal-button{
+    width: 150px;
+    height: 150px;
+    font-size: 3em;
+}
+
+#calc-check{
+    display: none;
+    margin-top: 10px;
+}
+
+#button-modal{
+    position: absolute;
+    top: 43%;
+    left: 45%;
+    
+}
+
