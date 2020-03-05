@@ -43,5 +43,10 @@ body{
     font-size: 3.0vw;
 }
 #pay-button{
-    width: 20vw;
+    width: 35vw;
+    height: 10vh;
+    font-size: 2vw;
+}
+#id_pay_balance{
+    width: 35vw;
 }
