@@ -32,7 +32,7 @@ body{
 #text{
     height: 100%;
     width: 35%;
-    padding-right: 5vw;
+    padding-right: 2vw;
     padding-top: 8vh;
 }
 .text-area{
@@ -43,10 +43,10 @@ body{
     font-size: 3.0vw;
 }
 #pay-button{
-    width: 35vw;
+    width: 30vw;
     height: 10vh;
     font-size: 2vw;
 }
 #id_pay_balance{
-    width: 35vw;
+    width: 30vw;
 }
