@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3ab57347-0789-4de7-a35d-fe465a1253e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parking/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/templates/parking/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/parking/templates/parking/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/templates/parking/success_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/parking/templates/parking/success_in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/templates/parking/success_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/parking/templates/parking/success_out.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parking/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parking/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/views.py" afterDir="false" />
     </list>
@@ -30,6 +34,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/parking/templates/parking" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/parking/templates/parking" />
+      <recent name="$PROJECT_DIR$/parking/static" />
+      <recent name="$PROJECT_DIR$/parking/static/css" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

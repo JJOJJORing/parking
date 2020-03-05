@@ -25,7 +25,7 @@
 
             <p class="text-customer">비용은 {{ pay_balance }}원 입니다</p>
 
-            {% comment %} <p class="text-area">출차시간: {{ out_time }}</p> {% endcomment %}
+            
 
             <form action="{% url 'parking:calc_carnum' car_number %}" method="POST">{% csrf_token %}
 
@@ -40,7 +40,7 @@
 
 
 
-            {% comment %} <a href="{% url 'parking:index' %}">홈화면 돌아가기</a> {% endcomment %}
+            
         </div>
     </div>
 
