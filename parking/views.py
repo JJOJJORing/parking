@@ -8,8 +8,15 @@ from django.http import HttpResponseRedirect
 
 
 def index(request):
-    form = LogForm()
-    return render(request, 'parking/index.html', {'form': form})
+    form_log = LogForm()
+    form_car = CarForm()
+    form_user = UserForm()
+    context = {
+        'form_log': form_log,
+        'form_car': form_car,
+        'form_user': form_user,
+    }
+    return render(request, 'parking/index.html', context)
 
 
 # def success_in(request):
@@ -122,3 +129,37 @@ def car_out(request, car_number):
             'pay_balance': pay_val,
         }
         return render(request, 'parking/calc.html', context)
+
+
+def register(request):
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        car_form = CarForm(request.POST)
+        if user_form.is_valid() and car_form.is_valid():
+            user = user_form.save(commit=False)
+            car_num = car_form.cleaned_data['car_num']
+            ticket_num = car_form.cleaned_data['ticket_num']
+            ticket_limit = car_form.cleaned_data['ticket_limit']
+
+            try:
+                new_user = User.objects.get(name=user.name, phone=user.phone)
+                print(new_user.pk)
+                car = Car(car_num=car_num, ticket_num=ticket_num, ticket_limit=ticket_limit, user_id=new_user.pk)
+                car.save()
+                return redirect('http://127.0.0.1:8000/parking')
+            except ObjectDoesNotExist:
+                user.save()
+                new_user = User.objects.get(name=user.name, phone=user.phone)
+                car = Car(car_num=car_num, ticket_num=ticket_num, ticket_limit=ticket_limit, user_id=new_user.pk)
+                car.save()
+                return redirect('http://127.0.0.1:8000/parking')
+    else:
+        form_log = LogForm()
+        form_car = CarForm()
+        form_user = UserForm()
+        context = {
+            'form_log': form_log,
+            'form_car': form_car,
+            'form_user': form_user,
+        }
+        return render(request, 'parking/index.html', context)

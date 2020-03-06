@@ -14,6 +14,15 @@ body{
     width: 150px;
     height: 150px;
     font-size: 3em;
+    margin-right: 0.5vw;
+}
+#button-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#button-modal button{
+    border-radius: 20%;
 }
 
 #calc-check{
@@ -21,10 +30,8 @@ body{
     margin-top: 10px;
 }
 
-#button-modal{
-    position: absolute;
-    top: 43%;
-    left: 45%;
-    
+#modal-wrap{
+    padding-top: 50vh;
+    padding-left: 9vw;
 }
 
