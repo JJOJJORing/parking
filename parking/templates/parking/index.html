@@ -147,8 +147,11 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
   <script>
-    $('#id_car_number').attr('pattern', '\d{2}[가-힣ㄱ-ㅎㅏ-ㅣ\x20]\d{4}');
-    $('#id_car_num').attr('pattern', '\d{2}[가-힣ㄱ-ㅎㅏ-ㅣ\x20]\d{4}');
+    $('#id_car_number').attr('pattern', '^\\d{2,3}\\D\\d{4}$');
+    $('#id_car_num').attr('pattern', '^\\d{2,3}\\D\\d{4}$');
+    $('#id_phone').attr('pattern', '^01[016789]-\\d{3,4}-\\d{4}$');
+    $('#id_ticket_num').attr('pattern', '^\\d{5}$');
+
 
 
 
