@@ -13,18 +13,36 @@
 <body>
 
 
+
+
+  <!--<div class="container">-->
+  <!--    <div class="form-out">-->
+  <!--        <form action='' method="POST">{% csrf_token %}-->
+
+  <!--                {{ form.as_p }}-->
+
+  <!--            <input type="submit" class="btn btn-primary" value="입차" name="carin">-->
+  <!--            <input type="submit" value="출차" class="btn btn-danger" name="carout">-->
+  <!--        </form>-->
+  <!--        {% if form.errors %}-->
+  <!--        <span>{{ form.error }}</span>-->
+  <!--        {% endif %}-->
+  <!--    </div>-->
+  <!--</div>-->
+
   <div class="container">
 
     <div id="modal-wrap">
       <div id="button-modal">
-        <button type="button" class="btn btn-warning btn-lg modal-button" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" class="btn btn-warning btn-lg modal-button trans-btn" data-toggle="modal" data-target="#exampleModalCenter">
           입차
         </button>
+        <span>{{ warning }}</span>
         <button type="button" class="btn btn-danger btn-lg modal-button" data-toggle="modal" data-target="#exampleModalCenter2">
           출차
         </button>
         <button id="regi-btn" type="button" class="btn btn-primary btn-lg modal-button trans-btn" data-toggle="modal" data-target="#exampleModalCenter3">
-            등록
+          등록
         </button>
       </div>
     </div>
@@ -44,11 +62,16 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action='{% url "parking:car_in" %}' method="POST">{% csrf_token %}
+          <form action='' method="POST">{% csrf_token %}
 
             {{ form_log.as_p }}
-
-            <input type="submit" class="btn btn-primary" value="입차" name="carin">
+            <p id="car_number_check"></p>
+            <p id="already"></p>
+            <p id="name"></p>
+            <p id="car_in"></p>
+            <p id="ticket_limit"></p>
+            <button  id="entrance" type="button" class="btn btn-primary">입차</button>
+            {% comment %}<input type="submit" class="btn btn-primary" value="입차" name="carin">{% endcomment %}
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </form>
 
@@ -80,6 +103,7 @@
         <div class="modal-body">
           <form action="{% url 'parking:calc' %}" method="POST">{% csrf_token %}
             {{ form_log.as_p }}
+
             <input type="submit" class="btn btn-primary" value="정산" name="calc">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </form>
@@ -107,12 +131,15 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action='{% url "parking:register" %}' method="POST">{% csrf_token %}
+          <form action='{% url "parking:register" %}' method="POST" onsubmit="return false">{% csrf_token %}
 
             {{ form_user.as_p }}
             {{ form_car.as_p }}
+            <p id="register-error"></p>
+            <p id="success"></p>
 
-            <input type="submit" class="btn btn-primary" value="등록" name="register">
+            <button id="register" type="button" class="btn btn-primary">등록</button>
+            {% comment %}<input type="submit" class="btn btn-primary" value="등록" name="register">{% endcomment %}
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </form>
 
@@ -136,7 +163,6 @@
 
 
 
-
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
@@ -146,13 +172,107 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <script>
-    $('#id_car_number').attr('pattern', '^\\d{2,3}\\D\\d{4}$');
-    $('#id_car_num').attr('pattern', '^\\d{2,3}\\D\\d{4}$');
-    $('#id_phone').attr('pattern', '^01[016789]-\\d{3,4}-\\d{4}$');
-    $('#id_ticket_num').attr('pattern', '^\\d{5}$');
+      $('#id_phone').attr('placeholder', '010-1234-5678')
+      $('#id_ticket_num').attr('placeholder', '5자리')
+
+      $('#entrance').click(function(){
+      var car_num = $('#id_car_number').val()
+
+      $.ajax({
+          type: 'POST',
+          url:'car_in/',
+          data : {
+              'car_num':car_num,
+              'csrfmiddlewaretoken': '{{ csrf_token }}',
+              },
+          dataType: "json",
+          success:function(data){
+              console.log(data.check)
+              console.log(data.already)
+              console.log(data.customer)
+              console.log(data.user)
+              if (data.check){
+                $('#car_number_check').html(data.check)
+                $('#name').html('')
+                $('#car_in').html('')
+                $('#ticket_limit').html('')
+              }else if(data.already) {
+                $('#name').html(data.already)
+                $('#car_number_check').html('')
+                $('#car_in').html('')
+                $('#ticket_limit').html('')
+              }else if(data.user){
+                $('#car_in').html(data.user)
+                $('#name').html('')
+                $('#car_number_check').html('')
+                $('#ticket_limit').html('')
+                $('#id_car_number').text('')
+                document.write(data.html)
+              }else if(data.customer){
+                $('#car_in').html(data.customer)
+                $('#ticket_limit').html(data.ticket_limit)
+                $('#name').html('')
+                $('#car_number_check').html('')
+                $('#id_car_number').text('')
+                document.write(data.html)
+              }
 
 
+          },
+          error: function(request, status, error){
+              console.log('error')
+
+            },
+        })
+    })
+
+    $('#register').click(function(){
+              var name = $('#id_name').val()
+              var phone = $('#id_phone').val()
+              var email = $('#id_email').val()
+              var car_num = $('#id_car_num').val()
+              var ticket_num = $('#id_ticket_num').val()
+              var ticket_limit = $('#id_ticket_limit').val()
+              $.ajax({
+                  type: 'POST',
+                  url:'register/',
+                  data : {
+                      'name':name,
+                      'phone':phone,
+                      'email':email,
+                      'car_num':car_num,
+                      'ticket_num':ticket_num,
+                      'ticket_limit':ticket_limit,
+                      'csrfmiddlewaretoken': '{{ csrf_token }}',
+                      },
+                  dataType: "json",
+                  success:function(data){
+                    console.log(data.message)
+                      if (data.message){
+                        $('#register-error').html(data.message)
+                        $('#success').html('')
+                      }else if(data.success){
+                        $('#register-error').html(data.success)
+                        setTimeout(()=>{
+                          window.location.reload();
+                        },2000)
+                      }
+
+
+
+
+
+                  },
+                  error: function(request, status, error){
+                      alert(error);
+                  },
+              })
+          })
 
 
   </script>
