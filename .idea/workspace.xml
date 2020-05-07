@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ab57347-0789-4de7-a35d-fe465a1253e1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parking/templates/parking/wrong_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/parking/templates/parking/wrong_request.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parking/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/templates/parking/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/parking/templates/parking/index.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,10 +26,16 @@
   </component>
   <component name="ProjectId" id="1YcCh1QL1FtbGjUQvO1Wx1qcBBQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/parking/templates/parking" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -36,18 +43,6 @@
       <recent name="$PROJECT_DIR$/parking/static" />
       <recent name="$PROJECT_DIR$/parking/static/css" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -59,8 +54,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583232610970</updated>
+      <workItem from="1584092582816" duration="99000" />
+      <workItem from="1584092749065" duration="228000" />
+      <workItem from="1584093320632" duration="862000" />
+      <workItem from="1584096983596" duration="1605000" />
+      <workItem from="1584253180061" duration="68000" />
+      <workItem from="1584335337944" duration="3010000" />
+      <workItem from="1584697490773" duration="16000" />
+      <workItem from="1585118236860" duration="433000" />
+      <workItem from="1585126766762" duration="839000" />
+      <workItem from="1585139632530" duration="573000" />
+      <workItem from="1586518638253" duration="107000" />
+      <workItem from="1586525091860" duration="6242000" />
+      <workItem from="1586766048528" duration="17000" />
+      <workItem from="1586774969182" duration="417000" />
+      <workItem from="1586844399916" duration="1791000" />
+      <workItem from="1586933204314" duration="537000" />
+      <workItem from="1588763726458" duration="1640000" />
+      <workItem from="1588832025433" duration="1204000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -74,5 +90,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1749" y="171" width="1357" height="779" key="SettingsEditor" timestamp="1584094167381">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1749" y="171" key="SettingsEditor/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1584094167381" />
+    <state x="1749" y="190" width="1357" height="779" key="SettingsEditor/0.23.1280.777/1280.23.1920.1057@1280.23.1920.1057" timestamp="1584093887666" />
   </component>
 </project>
